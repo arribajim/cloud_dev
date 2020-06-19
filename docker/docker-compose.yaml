@@ -1,0 +1,10 @@
+version: '3'
+services:
+  ccweb:
+   build: .
+   ports:
+     - "8180"
+   volumes:
+     - ./logs/:/usr/local/tomcat/logs/
+     - ./webapps/:/usr/local/tomcat/webapps/
+     - ./tmp/:/tmp/
