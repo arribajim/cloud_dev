@@ -1,9 +1,6 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\docker",
-    "\\kubernetes",
-    "\\tomcat_gw"
+    ""
   ],
   "PreviewInSolutionExplorer": false
 }
