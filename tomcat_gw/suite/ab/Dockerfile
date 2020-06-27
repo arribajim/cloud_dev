@@ -127,6 +127,6 @@ RUN set -eux; \
 
 # copy conf, prop, war file
 COPY ["conf/context.xml","conf/server.xml","conf/external_gw.properties", "./conf/"]
-COPY ["webapps/ab.war", "./webapps/"]
+COPY ["webapps/sample.war", "./webapps/"]
 EXPOSE 8080
 CMD ["catalina.sh", "run"]
