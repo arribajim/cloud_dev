@@ -1,6 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\docker",
+    "\\kubernetes",
+    "\\tomcat_gw"
   ],
+  "SelectedNode": "\\tomcat_gw\\createenv.sh",
   "PreviewInSolutionExplorer": false
 }
