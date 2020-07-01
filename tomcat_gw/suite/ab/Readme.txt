@@ -1,4 +1,7 @@
 Demo sample, with light container
+
+docker build -t arribajim/tomcat9:gw-ab_v1 .
+
 linux
 -v $PWD/tmp/external_gw.properties:/usr/local/tomcat/config #´pegar properties
 windows
@@ -18,3 +21,10 @@ docker run -d -p 9280:8080 -e JAVA_OPTS="-Dgw.ab.serverid=#batch,workqueue,sched
 
 //con propiedades en volumen 
 docker run -d -p 9280:8080 -e JAVA_OPTS="-Dgw.ab.serverid=#batch,workqueue,scheduler,messaging,startable,ui -Dgw.server.mode=test -Dgw.ab.env=docker -Dgw.passthrough.gw.config.external.property.file=/tmp/external_gw.properties"  --name gw-ab-docker arribajim/tomcat9:gw-ab_v1
+
+
+dev mode
+docker run -d -p 8280:8080 -e JAVA_OPTS="-Dgw.ab.serverid=#batch,workqueue,scheduler,messaging,startable,ui -Dgw.server.mode=dev" --name gw-ab-local arribajim/tomcat9:gw-ab_v1
+
+for docker-compose or kubernetes
+http://localhost:8280/ab/ping

@@ -6,3 +6,4 @@
 /tomcat_gw/suite/conf
 /tomcat_gw/suite/Dockerfile
 /tomcat_gw/suite/Readme.txt
+*.war

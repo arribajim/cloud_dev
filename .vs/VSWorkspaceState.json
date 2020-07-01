@@ -1,10 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\docker",
-    "\\kubernetes",
-    "\\tomcat_gw"
+    "\\tomcat_gw",
+    "\\tomcat_gw\\suite",
+    "\\tomcat_gw\\suite\\ab\\conf",
+    "\\tomcat_gw\\suite\\ab\\webapps",
+    "\\tomcat_gw\\suite\\bc\\conf",
+    "\\tomcat_gw\\suite\\bc\\conf\\Catalina",
+    "\\tomcat_gw\\suite\\bc\\conf\\Catalina\\localhost",
+    "\\tomcat_gw\\suite\\pc\\conf",
+    "\\tomcat_gw\\suite\\pc\\conf\\Catalina\\localhost"
   ],
-  "SelectedNode": "\\tomcat_gw\\createenv.sh",
+  "SelectedNode": "\\tomcat_gw",
   "PreviewInSolutionExplorer": false
 }
