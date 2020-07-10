@@ -3,14 +3,15 @@
     "",
     "\\tomcat_gw",
     "\\tomcat_gw\\suite",
-    "\\tomcat_gw\\suite\\ab\\conf",
-    "\\tomcat_gw\\suite\\ab\\webapps",
+    "\\tomcat_gw\\suite\\ab",
     "\\tomcat_gw\\suite\\bc\\conf",
     "\\tomcat_gw\\suite\\bc\\conf\\Catalina",
     "\\tomcat_gw\\suite\\bc\\conf\\Catalina\\localhost",
     "\\tomcat_gw\\suite\\pc\\conf",
-    "\\tomcat_gw\\suite\\pc\\conf\\Catalina\\localhost"
+    "\\tomcat_gw\\suite\\pc\\conf\\Catalina",
+    "\\tomcat_gw\\suite\\pc\\conf\\Catalina\\localhost",
+    "\\tomcat_gw\\suite\\pc\\webapps"
   ],
-  "SelectedNode": "\\tomcat_gw",
+  "SelectedNode": "\\tomcat_gw\\suite\\ab\\Dockerfile",
   "PreviewInSolutionExplorer": false
 }

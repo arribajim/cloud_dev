@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: guidewire-svc
+  namespace: guidewire-ns
+spec:
+  ports:
+  - port: 80
+    targetPort: 8080
+  selector:
+    app: ab1003 
+

@@ -15,10 +15,14 @@ docker run -d -p 8180:8080 -e JAVA_OPTS="-Dgw.server.mode=test" --name gw-pc-loc
 
 //docker env con properties precargadas
 
-docker run -d -p 9180:8080 -e JAVA_OPTS="-Dgw.server.mode=test -Dgw.pc.env=docker -Dgw.passthrough.gw.config.external.property.file=/usr/local/tomcat/conf/external_gw.properties"  --name gw-pc-docker arribajim/tomcat9:gw-pc_v1
+docker run -d -p 9180:8080 -e JAVA_OPTS="-Dgw.server.mode=dev -Dgw.pc.env=docker -Dgw.passthrough.gw.config.external.property.file=/usr/local/tomcat/conf/external_gw.properties"  --name gw-pc-docker arribajim/tomcat9:gw-pc_v1
 
 //con propiedades en volumen 
-docker run -d -p 9180:8080 -e JAVA_OPTS="-Dgw.server.mode=test -Dgw.pc.env=docker -Dgw.passthrough.gw.config.external.property.file=/tmp/external_gw.properties"  --name gw-pc-docker arribajim/tomcat9:gw-pc_v1
+docker run -d -p 9180:8080 -e JAVA_OPTS="-Dgw.server.mode=dev -Dgw.pc.env=docker -Dgw.passthrough.gw.config.external.property.file=/tmp/external_gw.properties"  --name gw-pc-docker arribajim/tomcat9:gw-pc_v1
+
+
+dev mode
+docker run -d -p 8180:8080 -e JAVA_OPTS="-Dgw.pc.serverid=#batch,workqueue,scheduler,messaging,startable,ui -Dgw.server.mode=dev" --name gw-pc-local arribajim/tomcat9:gw-pc_v1
 
 
 docker push arribajim/tomcat9:gw-pc_v1

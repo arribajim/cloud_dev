@@ -1,29 +1,25 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: gw-ab
+  name: gw-ab-local
   namespace: guidewire-ns
-  Annotations:
-    note1: "esta nota es un ejemplo, checar si funciona al crear el pod"
   labels:
-    env: docker
-    app: ab
+    env: local
+    app: ab1003
     rel: canary
-    ver: 10.3
+    ver: "10.3"
 spec:
   containers:
-  - image: arribajim/tomcat9:ab1003 #change image for app
-    name: ab1003
-    livenessProbe:
-      httpGet:
-        path: /
-        port: 8280
-        initialDelaySeconds: 600        
+  - image: arribajim/tomcat9:gw-ab_v1
+    env:
+    - name: JAVA_OPTS
+      value: "-Dgw.ab.serverid=#batch,workqueue,scheduler,messaging,startable,ui -Dgw.server.mode=dev -Dgw.ab.env=docker -Dgw.passthrough.gw.config.external.property.file=/usr/local/tomcat/conf/external_gw.properties"
+    name: ab1003    
     volumeMounts:
     - name: tmpvol
       mountPath: /tmp
     ports:
-        - containerPort: 8280
+        - containerPort: 8080
           protocol: TCP
   volumes:
   - name: tmpvol

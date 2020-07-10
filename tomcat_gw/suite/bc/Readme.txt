@@ -16,11 +16,12 @@ docker run -d -p 8580:8080 -e JAVA_OPTS="-Dgw.server.mode=test" --name gw-bc-loc
 
 //docker env con properties precargadas
 
-docker run -d -p 9580:8080 -e JAVA_OPTS="-Dgw.server.mode=test -Dgw.bc.env=docker -Dgw.passthrough.gw.config.external.property.file=/usr/local/tomcat/conf/external_gw.properties"  --name gw-bc-docker arribajim/tomcat9:gw-bc_v1
+docker run -d -p 9580:8080 -e JAVA_OPTS="-Dgw.server.mode=dev -Dgw.bc.env=docker -Dgw.passthrough.gw.config.external.property.file=/usr/local/tomcat/conf/external_gw.properties"  --name gw-bc-docker arribajim/tomcat9:gw-bc_v1
 
 //con propiedades en volumen 
 docker run -d -p 9580:8080 -e JAVA_OPTS="-Dgw.server.mode=test -Dgw.bc.env=docker -Dgw.passthrough.gw.config.external.property.file=/tmp/external_gw.properties"  --name gw-bc-docker arribajim/tomcat9:gw-bc_v1
 
-
+dev mode
+docker run -d -p 8580:8080 -e JAVA_OPTS="-Dgw.bc.serverid=#batch,workqueue,scheduler,messaging,startable,ui -Dgw.server.mode=dev" --name gw-bc-local arribajim/tomcat9:gw-bc_v1
 
 docker push arribajim/tomcat9:gw-bc_v1

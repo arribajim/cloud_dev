@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: gw-ab-local
+  namespace: guidewire-ns
+  labels:
+    env: local
+    app: ab
+    rel: canary
+    ver: 10.3
+spec:
+  containers:
+  - image: arribajim/tomcat9:gw-ab_v1
+    name: ab1003
+    livenessProbe:
+      httpGet:
+        path: /
+        port: 8280
+        initialDelaySeconds: 600 falla porque quiere ver que levanto entonces ir por el ping en un wikle       
+    volumeMounts:
+    - name: tmpvol
+      mountPath: /tmp
+    ports:
+        - containerPort: 8280
+          protocol: TCP
+  volumes:
+  - name: tmpvol
+    emptyDir: {}
