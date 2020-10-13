@@ -2,21 +2,21 @@
 CREATE DATABASE [PolicyCenterDb]
  CONTAINMENT = NONE
  ON  PRIMARY 
-( NAME = N'PolicyCenterDb', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER_2017\MSSQL\DATA\PolicyCenterDb.mdf' , SIZE = 1024000KB , MAXSIZE = UNLIMITED, FILEGROWTH = 0), 
+( NAME = N'PolicyCenterDb', FILENAME = N'/var/opt/mssql/data/PolicyCenterDb.mdf' , SIZE = 1024000KB , MAXSIZE = UNLIMITED, FILEGROWTH = 0), 
  FILEGROUP [ADMINFG_pc] 
-( NAME = N'adminfg_pcdb', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER_2017\MSSQL\DATA\adminfg_pcdb.ndf' , SIZE = 1024000KB , MAXSIZE = UNLIMITED, FILEGROWTH = 0), 
+( NAME = N'adminfg_pcdb', FILENAME = N'/var/opt/mssql/data/adminfg_pcdb.ndf' , SIZE = 1024000KB , MAXSIZE = UNLIMITED, FILEGROWTH = 0), 
  FILEGROUP [INDEXFG_pc] 
-( NAME = N'indexfg_pcdb', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER_2017\MSSQL\DATA\indexfg_pcdb.ndf' , SIZE = 1024000KB , MAXSIZE = UNLIMITED, FILEGROWTH = 0), 
+( NAME = N'indexfg_pcdb', FILENAME = N'/var/opt/mssql/data/indexfg_pcdb.ndf' , SIZE = 1024000KB , MAXSIZE = UNLIMITED, FILEGROWTH = 0), 
  FILEGROUP [LOBFG_pc] 
-( NAME = N'lobfg_pcdb', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER_2017\MSSQL\DATA\lobfg_pcdb.ndf' , SIZE = 1024000KB , MAXSIZE = UNLIMITED, FILEGROWTH = 0), 
+( NAME = N'lobfg_pcdb', FILENAME = N'/var/opt/mssql/data/lobfg_pcdb.ndf' , SIZE = 1024000KB , MAXSIZE = UNLIMITED, FILEGROWTH = 0), 
  FILEGROUP [OPFG_pc] 
-( NAME = N'opfg_pcdb', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER_2017\MSSQL\DATA\opfg_pcdb.ndf' , SIZE = 1024000KB , MAXSIZE = UNLIMITED, FILEGROWTH = 0), 
+( NAME = N'opfg_pcdb', FILENAME = N'/var/opt/mssql/data/opfg_pcdb.ndf' , SIZE = 1024000KB , MAXSIZE = UNLIMITED, FILEGROWTH = 0), 
  FILEGROUP [STAGINGFG_pc] 
-( NAME = N'stagingfg_pcdb', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER_2017\MSSQL\DATA\stagingfg_pcdb.ndf' , SIZE = 1024000KB , MAXSIZE = UNLIMITED, FILEGROWTH = 0), 
+( NAME = N'stagingfg_pcdb', FILENAME = N'/var/opt/mssql/data/stagingfg_pcdb.ndf' , SIZE = 1024000KB , MAXSIZE = UNLIMITED, FILEGROWTH = 0), 
  FILEGROUP [TYPELISTFG_pc] 
-( NAME = N'typelistfg_pcdb', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER_2017\MSSQL\DATA\typelistfg_pcdb.ndf' , SIZE = 1024000KB , MAXSIZE = UNLIMITED, FILEGROWTH = 0)
+( NAME = N'typelistfg_pcdb', FILENAME = N'/var/opt/mssql/data/typelistfg_pcdb.ndf' , SIZE = 1024000KB , MAXSIZE = UNLIMITED, FILEGROWTH = 0)
  LOG ON 
-( NAME = N'PolicyCenterDb_log', FILENAME = N'C:\Program Files\Microsoft SQL Server\MSSQL14.MSSQLSERVER_2017\MSSQL\DATA\PolicyCenterDb_log.ldf' , SIZE = 512000KB , MAXSIZE = 2048GB , FILEGROWTH = 0)
+( NAME = N'PolicyCenterDb_log', FILENAME = N'/var/opt/mssql/data/PolicyCenterDb_log.ldf' , SIZE = 512000KB , MAXSIZE = 2048GB , FILEGROWTH = 0)
 GO
 
 IF (1 = FULLTEXTSERVICEPROPERTY('IsFullTextInstalled'))
