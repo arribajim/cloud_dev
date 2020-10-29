@@ -17,7 +17,6 @@ la imagen los tiene en este path
 docker run -d -p 8280:8080 -e JAVA_OPTS="-Dgw.ab.serverid=#batch,workqueue,scheduler,messaging,startable,ui -Dgw.server.mode=test" --name gw-ab-local arribajim/tomcat9:gw-ab_v1
 
 //docker env con properties precargadas
-
 docker run -d -p 9280:8080 -e JAVA_OPTS="-Dgw.ab.serverid=#batch,workqueue,scheduler,messaging,startable,ui -Dgw.server.mode=test -Dgw.ab.env=docker -Dgw.passthrough.gw.config.external.property.file=/usr/local/tomcat/conf/external_gw.properties"  --name gw-ab-docker arribajim/tomcat9:gw-ab_v1
 
 //con propiedades en volumen 
@@ -37,3 +36,9 @@ docker push arribajim/tomcat9:gw-ab_v1
 
 down container
 docker pull arribajim/tomcat9:gw-ab_v1
+
+
+
+DOCKER WITH OOTB ENV LOAD PROPERTIES DEFAULT
+//docker env con properties precargadas
+docker run -d -p 8280:8080 -e JAVA_OPTS="-Dgw.ab.serverid=#batch,workqueue,scheduler,messaging,startable,ui -Dgw.server.mode=test -Dgw.ab.env=ootb -Dgw.passthrough.gw.config.external.property.file=/usr/local/tomcat/conf/external_gw.properties"  --name gw-ab-ootb arribajim/tomcat9:gw-ab_v1

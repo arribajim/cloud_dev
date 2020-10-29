@@ -7,3 +7,4 @@
 /tomcat_gw/suite/Dockerfile
 /tomcat_gw/suite/Readme.txt
 *.war
+docker/gw-ci/ContactManager.zip

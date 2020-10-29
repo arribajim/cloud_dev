@@ -30,6 +30,11 @@ spec:
         ports:
             - containerPort: 8080
               protocol: TCP
+        readinessProbe:
+          exec:
+            command:
+            - curl
+            - http://localhost:8080/ab/ping
       volumes:
       - name: tmpvol
         emptyDir: {}

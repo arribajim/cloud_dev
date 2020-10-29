@@ -25,3 +25,6 @@ dev mode
 docker run -d -p 8580:8080 -e JAVA_OPTS="-Dgw.bc.serverid=#batch,workqueue,scheduler,messaging,startable,ui -Dgw.server.mode=dev" --name gw-bc-local arribajim/tomcat9:gw-bc_v1
 
 docker push arribajim/tomcat9:gw-bc_v1
+
+docker env ootb, h2db
+docker run -d -p 8580:8080 -e JAVA_OPTS="-Dgw.server.mode=dev -Dgw.bc.env=ootb -Dgw.passthrough.gw.config.external.property.file=/usr/local/tomcat/conf/external_gw.properties"  --name gw-bc-ootb arribajim/tomcat9:gw-bc_v1

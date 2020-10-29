@@ -1,17 +1,16 @@
 {
   "ExpandedNodes": [
     "",
+    "\\docker",
+    "\\docker\\gw-ci",
+    "\\kubernetes",
     "\\tomcat_gw",
     "\\tomcat_gw\\suite",
     "\\tomcat_gw\\suite\\ab",
-    "\\tomcat_gw\\suite\\bc\\conf",
-    "\\tomcat_gw\\suite\\bc\\conf\\Catalina",
-    "\\tomcat_gw\\suite\\bc\\conf\\Catalina\\localhost",
-    "\\tomcat_gw\\suite\\pc\\conf",
-    "\\tomcat_gw\\suite\\pc\\conf\\Catalina",
-    "\\tomcat_gw\\suite\\pc\\conf\\Catalina\\localhost",
-    "\\tomcat_gw\\suite\\pc\\webapps"
+    "\\tomcat_gw\\suite\\ab\\webapps",
+    "\\tomcat_gw\\suite\\bc",
+    "\\tomcat_gw\\suite\\bc\\conf"
   ],
-  "SelectedNode": "\\tomcat_gw\\suite\\ab\\Dockerfile",
+  "SelectedNode": "\\docker\\gw-ci",
   "PreviewInSolutionExplorer": false
 }
