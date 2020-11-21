@@ -1,0 +1,171 @@
+#generar LOS WAR CON JDBC DRVIERS
+
+62eb91c70169                                               2020-06-27 07:11:23,365 ERROR An exception was thrown while starting a component. Setting runlevel to SHUTDOWN [Unable to locate driver in classpath: com.microsoft.sqlserver.jdbc.SQLServerDriver]
+62eb91c70169                                               2020-06-27 07:11:23,371 INFO Decreased runlevel to 'SHUTDOWN'
+62eb91c70169                                               2020-06-27 07:11:23,372 ERROR ***** ClaimCenter unable to start *****
+gw.pl.exception.GWLifecycleException: An exception was thrown while starting a component. Setting runlevel to SHUTDOWN
+        at com.guidewire.pl.system.server.InitTab.increaseRunLevelTo(InitTab.java:680) ~[pl-10.13.6.jar:?]
+        at com.guidewire.pl.system.server.InitTab.setRunLevel(InitTab.java:380) ~[pl-10.13.6.jar:?]
+        at com.guidewire.pl.system.servlet.GuidewireStartupServlet.init(GuidewireStartupServlet.java:88) [pl-10.13.6.jar:?]
+        at javax.servlet.GenericServlet.init(GenericServlet.java:158) [servlet-api.jar:4.0.FR]
+        at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1134) [catalina.jar:9.0.36]
+        at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1089) [catalina.jar:9.0.36]
+        at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:983) [catalina.jar:9.0.36]
+        at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:4864) [catalina.jar:9.0.36]
+        at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5173) [catalina.jar:9.0.36]
+        at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) [catalina.jar:9.0.36]
+        at org.apache.catalina.core.ContainerBase.addChildInternal(ContainerBase.java:717) [catalina.jar:9.0.36]
+        at org.apache.catalina.core.ContainerBase.addChild(ContainerBase.java:690) [catalina.jar:9.0.36]
+        at org.apache.catalina.core.StandardHost.addChild(StandardHost.java:705) [catalina.jar:9.0.36]
+        at org.apache.catalina.startup.HostConfig.deployWAR(HostConfig.java:978) [catalina.jar:9.0.36]
+        at org.apache.catalina.startup.HostConfig$DeployWar.run(HostConfig.java:1848) [catalina.jar:9.0.36]
+        at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515) [?:?]
+        at java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+        at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75) [tomcat-util.jar:9.0.36]
+        at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:118) [?:?]
+        at org.apache.catalina.startup.HostConfig.deployWARs(HostConfig.java:773) [catalina.jar:9.0.36]
+        at org.apache.catalina.startup.HostConfig.deployApps(HostConfig.java:427) [catalina.jar:9.0.36]
+        at org.apache.catalina.startup.HostConfig.start(HostConfig.java:1576) [catalina.jar:9.0.36]
+        at org.apache.catalina.startup.HostConfig.lifecycleEvent(HostConfig.java:309) [catalina.jar:9.0.36]
+        at org.apache.catalina.util.LifecycleBase.fireLifecycleEvent(LifecycleBase.java:123) [catalina.jar:9.0.36]
+        at org.apache.catalina.util.LifecycleBase.setStateInternal(LifecycleBase.java:423) [catalina.jar:9.0.36]
+        at org.apache.catalina.util.LifecycleBase.setState(LifecycleBase.java:366) [catalina.jar:9.0.36]
+        at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:936) [catalina.jar:9.0.36]
+        at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:841) [catalina.jar:9.0.36]
+        at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183) [catalina.jar:9.0.36]
+        at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384) [catalina.jar:9.0.36]
+        at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374) [catalina.jar:9.0.36]
+        at java.util.concurrent.FutureTask.run(FutureTask.java:264) [?:?]
+
+#problem with sample data
+ERROR Displaying to the user an exception message that is not a UserDisplayableException in context ID 'ABSampleData'
+
+com.guidewire.pl.system.staging.impl.TableImportBatchProcess$TableImportServiceException: Server must be in maintenance mode when executing loader operation 'integritycheckandload'
+
+at com.guidewire.pl.system.staging.impl.TableImportBatchProcess.verifyServerIsInMaintenanceMode(TableImportBatchProcess.java:458) ~[pl-10.13.6.jar:?]
+
+at com.guidewire.pl.system.staging.impl.TableImportBatchProcess.integrityCheckStagingTableContentsAndLoadSourceTables(TableImportBatchProcess.java:427) ~[pl-10.13.6.jar:?]
+
+at com.guidewire.pl.system.staging.impl.TableImportBatchProcess.integrityCheckStagingTableContentsAndLoadSourceTables(TableImportBatchProcess.java:404) ~[pl-10.13.6.jar:?]
+
+at com.guidewire.pl.system.staging.impl.TableImportBatchProcess.doWork(TableImportBatchProcess.java:84) ~[pl-10.13.6.jar:?]
+
+at com.guidewire.pl.system.batchprocessing.SinglePhaseBatchProcess$1.act(SinglePhaseBatchProcess.java:21) ~[pl-10.13.6.jar:?]
+
+at com.guidewire.pl.system.batchprocessing.MultiPhaseBatchProcess.actOnCurrentPhase(MultiPhaseBatchProcess.java:107) ~[pl-10.13.6.jar:?]
+
+at com.guidewire.pl.system.batchprocessing.MultiPhaseBatchProcess.runPhases(MultiPhaseBatchProcess.java:94) ~[pl-10.13.6.jar:?]
+
+at com.guidewire.pl.system.batchprocessing.MultiPhaseBatchProcess.run(MultiPhaseBatchProcess.java:71) ~[pl-10.13.6.jar:?]
+
+at gw.api.util.DataImportTestUtil.importZonesFromData(DataImportTestUtil.java:85) ~[pl-gunit-10.13.6.jar:?]
+
+at gw.api.util.DataImportTestUtil.importZoneData(DataImportTestUtil.java:137) ~[pl-gunit-10.13.6.jar:?]
+
+at gw.api.util.DataImportTestUtil.importZoneData(DataImportTestUtil.java:123) ~[pl-gunit-10.13.6.jar:?]
+
+at gw.command.ImportSampleData.import(ImportSampleData.gs:13) ~[?:?]
+
+at pcfc.expressions.ABSampleDataExpressions$ScreenExpressionsImpl.action_2(ABSampleDataExpressions.gs:52) ~[?:?]
+
+at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:?]
+
+at jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[?:?]
+
+at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[?:?]
+
+at java.lang.reflect.Method.invoke(Method.java:566) ~[?:?]
+
+at com.guidewire.pl.web.config.expression.GosuMethodHandle$MethodWrapper.invoke(GosuMethodHandle.java:56) ~[pl-10.13.6.jar:?]
+
+at com.guidewire.pl.web.config.expression.GosuMethodHandle.invoke(GosuMethodHandle.java:166) ~[pl-10.13.6.jar:?]
+
+at com.guidewire.pl.web.action.GosuActionListener.onAction(GosuActionListener.java:50) ~[pl-10.13.6.jar:?]
+
+at com.guidewire.pl.web.action.GosuActionListener.action(GosuActionListener.java:81) ~[pl-10.13.6.jar:?]
+
+at com.guidewire.pl.web.action.ActionWidget.widgetEvent_internal(ActionWidget.java:114) ~[pl-10.13.6.jar:?]
+
+at com.guidewire.pl.web.value.ValueWidget.widgetEvent_internal(ValueWidget.java:1337) ~[pl-10.13.6.jar:?]
+
+at com.guidewire.pl.web.widget.Widget.widgetEvent(Widget.java:128) ~[pl-10.13.6.jar:?]
+
+at com.guidewire.pl.web.controller.lifecycle.ExecuteEventsStep.execute(ExecuteEventsStep.java:44) ~[pl-10.13.6.jar:?]
+
+at com.guidewire.pl.web.controller.lifecycle.LifecycleRequestHandler.runLifecycleSteps(LifecycleRequestHandler.java:246) [pl-10.13.6.jar:?]
+
+at com.guidewire.pl.web.controller.lifecycle.LifecycleRequestHandler.handleRequest(LifecycleRequestHandler.java:208) [pl-10.13.6.jar:?]
+
+at com.guidewire.pl.web.controller.WebControllerImpl$2.run(WebControllerImpl.java:226) [pl-10.13.6.jar:?]
+
+at com.guidewire.pl.web.internaltools.profiler.WebProfiler.profilingBlock(WebProfiler.java:211) [pl-10.13.6.jar:?]
+
+at com.guidewire.pl.web.controller.WebControllerImpl.processWithProfilingHouseKeeping(WebControllerImpl.java:221) [pl-10.13.6.jar:?]
+
+at com.guidewire.pl.web.controller.WebControllerImpl.handleRequest(WebControllerImpl.java:195) [pl-10.13.6.jar:?]
+
+at com.guidewire.pl.web.controller.WebServlet.handleRequest(WebServlet.java:148) [pl-10.13.6.jar:?]
+
+at com.guidewire.pl.web.controller.WebServlet.doPost(WebServlet.java:87) [pl-10.13.6.jar:?]
+
+at javax.servlet.http.HttpServlet.service(HttpServlet.java:660) [servlet-api.jar:?]
+
+at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) [servlet-api.jar:?]
+
+at com.guidewire.pl.web.controller.WebServlet.service(WebServlet.java:95) [pl-10.13.6.jar:?]
+
+at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) [catalina.jar:9.0.36]
+
+at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.36]
+
+at com.guidewire.pl.web.controller.csrf.CSRFTokenFilter.doFilter(CSRFTokenFilter.java:44) [pl-10.13.6.jar:?]
+
+at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.36]
+
+at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.36]
+
+at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.36]
+
+at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) [catalina.jar:9.0.36]
+
+at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) [catalina.jar:9.0.36]
+
+at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.36]
+
+at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) [catalina.jar:9.0.36]
+
+at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) [catalina.jar:9.0.36]
+
+at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) [catalina.jar:9.0.36]
+
+at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.36]
+
+at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:690) [catalina.jar:9.0.36]
+
+at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) [catalina.jar:9.0.36]
+
+at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) [catalina.jar:9.0.36]
+
+at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:373) [tomcat-coyote.jar:9.0.36]
+
+at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.36]
+
+at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) [tomcat-coyote.jar:9.0.36]
+
+at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1590) [tomcat-coyote.jar:9.0.36]
+
+at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.36]
+
+at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) [?:?]
+
+at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) [?:?]
+
+at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.36]
+
+at java.lang.Thread.run(Thread.java:834) [?:?]
+
+27-Jun-2020 08:00:05.446 INFO [Thread-13] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+
+27-Jun-2020 08:00:05.453 INFO [Thread-13] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+
+4d77f0fb00fa 2020-06-27 08:00:05,462 INFO ***** ContactManager shutting down *****
