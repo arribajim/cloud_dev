@@ -2,6 +2,7 @@ FROM openjdk:8-jdk-buster
 
 ENV CATALINA_HOME /usr/local/tomcat
 ENV PATH $CATALINA_HOME/bin:$PATH
+ENV CATALINA_OPTS "-Xms1024m -Xmx1024m -Djava.net.preferIPv4Stack=true"
 RUN mkdir -p "$CATALINA_HOME"
 WORKDIR $CATALINA_HOME
 
@@ -85,7 +86,7 @@ RUN set -eux; \
 		aprConfig="$(command -v apr-1-config)"; \
 		./configure \
 			--build="$gnuArch" \
-			--libdir="$TOMCAT_NATIVE_LIBDIR" \
+			--libdir="$TOMCAT_NATIVE_LIBDIR" \			
 			--prefix="$CATALINA_HOME" \
 			--with-apr="$aprConfig" \
 			--with-java-home="$JAVA_HOME" \
@@ -119,6 +120,8 @@ RUN set -eux; \
 # https://github.com/docker-library/tomcat/issues/35
 	chmod -R +rX .; \
 	chmod 777 logs temp work; \
+#	rm conf/context.xml; \
+#	rm conf/server.xml; \	
 	\
 # smoke test
 	catalina.sh version
@@ -132,6 +135,8 @@ RUN set -eux; \
 		echo >&2 "$nativeLines"; \
 		exit 1; \
 	fi
-
+# copy conf, prop, war file
+COPY ["conf/context.xml","conf/server.xml", "./conf/"]
+COPY ["webapps/ab.war", "./webapps/"]
 EXPOSE 8080
 CMD ["catalina.sh", "run"]

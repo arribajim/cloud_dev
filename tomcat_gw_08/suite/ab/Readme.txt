@@ -8,6 +8,11 @@ linux
 windows
 -v //c/home/github_jim/gw/weblogic/domain.properties:/u01/oracle/properties/domain.properties
 
+
+localhost
+docker run -d -p 8280:8080 --name gw-ab-local arribajim/tomcat7:gw-ab_v1
+
+
 si se mandan por volument montado
 -e JAVA_OPTS="-Dgw.ab.serverid=#batch,workqueue,scheduler,messaging,startable,ui -Dgw.ab.env=docker -Dgw.passthrough.gw.config.external.property.file=/tmp/external_gw.properties"
 la imagen los tiene en este path
@@ -23,7 +28,7 @@ docker run -d -p 9280:8080 -e JAVA_OPTS="-Dgw.ab.serverid=#batch,workqueue,sched
 docker run -d -p 9280:8080 -e JAVA_OPTS="-Dgw.ab.serverid=#batch,workqueue,scheduler,messaging,startable,ui -Dgw.server.mode=test -Dgw.ab.env=docker -Dgw.passthrough.gw.config.external.property.file=/tmp/external_gw.properties"  --name gw-ab-docker -v $PWD/external_gw.properties:/tmp arribajim/tomcat9:gw-ab_v1
 
 
-dev mode
+localhost
 docker run -d -p 8280:8080 -e JAVA_OPTS="-Dgw.ab.serverid=#batch,workqueue,scheduler,messaging,startable,ui -Dgw.server.mode=dev" --name gw-ab-local arribajim/tomcat9:gw-ab_v1
 
 for docker-compose or kubernetes
