@@ -1,5 +1,15 @@
 Demo sample, with light container
-docker build -t arribajim/tomcat9:gw-pc_v1 .
+docker build -t arribajim/tomcat7:gw-pc_v1 .
+
+localhost
+docker run -d -p 8180:8080 --name gw-pc7-local arribajim/tomcat7:gw-pc_v1
+
+
+env not suite
+
+docker run -d -p 9180:8080 -e JAVA_OPTS="-Dgw.server.mode=dev -Dgw.pc.env=docker "  --name gw-pc7-docker arribajim/tomcat7:gw-pc_v1
+
+
 linux
 -v $PWD/tmp/external_gw.properties:/usr/local/tomcat/config #´pegar properties
 windows

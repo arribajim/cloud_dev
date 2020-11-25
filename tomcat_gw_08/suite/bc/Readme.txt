@@ -1,5 +1,8 @@
 Demo sample, with light container
-docker build -t arribajim/tomcat9:gw-bc_v1 .
+docker build -t arribajim/tomcat7:gw-bc_v1 .
+
+localhost
+docker run -d -p 8580:8080 --name gw-bc-local arribajim/tomcat7:gw-bc_v1
 
 linux
 -v $PWD/tmp/external_gw.properties:/usr/local/tomcat/config #´pegar properties

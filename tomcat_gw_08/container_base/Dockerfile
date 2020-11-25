@@ -1,8 +1,28 @@
-FROM openjdk:8-jdk-buster
+FROM ubuntu:14.04
+# Install JDK 7 
+RUN apt-get --quiet update && \
+    apt-get --quiet --yes install wget && \
+    apt-get clean && \
+    wget --quiet \
+         --output-document=/jdk-7.tar.gz \
+         --no-check-certificate \
+         --no-cookies \
+         --header "Cookie: oraclelicense=accept-securebackup-cookie" \
+         http://download.oracle.com/otn-pub/java/jdk/7u79-b15/jdk-7u79-linux-x64.tar.gz && \
+    mkdir -p /usr/lib/jvm && \
+    tar --gunzip --extract --verbose --file /jdk-7.tar.gz --directory /usr/lib/jvm && \
+    rm -f /jdk-7.tar.gz && \
+    chown -R root:root /usr/lib/jvm
+
+# set the environment variables 
+ENV JDK_HOME /usr/lib/jvm/jdk1.7.0_79 
+ENV JAVA_HOME /usr/lib/jvm/jdk1.7.0_79
+ENV PATH $PATH:$JAVA_HOME/bin
+
 
 ENV CATALINA_HOME /usr/local/tomcat
 ENV PATH $CATALINA_HOME/bin:$PATH
-ENV CATALINA_OPTS "-Xms1024m -Xmx1024m -Djava.net.preferIPv4Stack=true"
+ENV CATALINA_OPTS "-Xms2048m -Xmx2048m -Djava.net.preferIPv4Stack=true"
 RUN mkdir -p "$CATALINA_HOME"
 WORKDIR $CATALINA_HOME
 
@@ -135,8 +155,6 @@ RUN set -eux; \
 		echo >&2 "$nativeLines"; \
 		exit 1; \
 	fi
-# copy conf, prop, war file
-COPY ["conf/context.xml","conf/server.xml", "./conf/"]
-COPY ["webapps/bc.war", "./webapps/"]
+        
 EXPOSE 8080
 CMD ["catalina.sh", "run"]

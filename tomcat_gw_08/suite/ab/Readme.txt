@@ -1,6 +1,6 @@
 Demo sample, with light container
 
-docker build -t arribajim/tomcat9:gw-ab_v1 .
+docker build -t arribajim/tomcat7:gw-ab_v1 .
 
 linux
 -v $PWD/tmp/external_gw.properties:/usr/local/tomcat/config #´pegar properties
