@@ -125,7 +125,8 @@ RUN set -eux; \
 	rm conf/context.xml; \
 	rm conf/server.xml
 
-# copy conf, prop, war file
+
+# copying
 COPY ["conf/context.xml","conf/server.xml","conf/external_gw.properties", "./conf/"]
 COPY ["webapps/cc.war", "./webapps/"]
 EXPOSE 8080
