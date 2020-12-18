@@ -1,10 +1,7 @@
 ﻿################################################################################
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
-
-.vs/cloud_dev/v16
-/tomcat_gw/suite/conf
-/tomcat_gw/suite/Dockerfile
-/tomcat_gw/suite/Readme.txt
+.idea/
+.vs/
 *.war
-docker/gw-ci/ContactManager.zip
+*.zip
