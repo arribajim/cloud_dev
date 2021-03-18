@@ -2,7 +2,7 @@ FROM openjdk:8-jdk-slim
 
 ENV CATALINA_HOME /usr/local/tomcat
 ENV PATH $CATALINA_HOME/bin:$PATH
-ENV CATALINA_OPTS "-Xms1024m -Xmx1024m -Djava.net.preferIPv4Stack=true"
+ENV CATALINA_OPTS "-Xms2048m -Xmx2048m -Djava.net.preferIPv4Stack=true"
 RUN mkdir -p "$CATALINA_HOME"
 WORKDIR $CATALINA_HOME
 

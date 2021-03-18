@@ -2,7 +2,7 @@ FROM openjdk:11-jdk-slim
 
 ENV CATALINA_HOME /usr/local/tomcat
 ENV PATH $CATALINA_HOME/bin:$PATH
-ENV CATALINA_OPTS "-Xms1024m -Xmx1024m -Djava.net.preferIPv4Stack=true"
+ENV CATALINA_OPTS "-Xms2048m -Xmx2048m -Djava.net.preferIPv4Stack=true"
 RUN mkdir -p "$CATALINA_HOME"
 WORKDIR $CATALINA_HOME
 
@@ -127,6 +127,8 @@ RUN set -eux; \
 
 # copy conf, prop, war file
 COPY ["conf/context.xml","conf/server.xml","conf/external_gw.properties", "./conf/"]
-COPY ["webapps/ab.war", "./webapps/"]
+#todo move war to aws buket
+ADD https://github.com/arribajim/cloud_dev/releases/download/v0.1-alpha/ab.war ./webapps
+#COPY ["webapps/ab.war", "./webapps/"]
 EXPOSE 8080
 CMD ["catalina.sh", "run"]
