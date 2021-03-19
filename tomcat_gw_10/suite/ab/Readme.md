@@ -1,5 +1,16 @@
 Demo sample, with light container
 
+docker build -t gwcloud/contactmanager:version10.03 .
+
+
+#Run local-ootb without passing from external source the properties
+docker run -d -p 8280:8080 -e JAVA_OPTS="-Dgw.ab.serverid=#batch,workqueue,scheduler,messaging,startable,ui -Dgw.server.mode=dev -Dgw.passthrough.gw.config.external.property.file=/usr/local/tomcat/conf/external_gw.properties -Dgw.ab.env=ootb -Dgw.passthrough.gw.loadsample.enable=true" --name gw-ab-ootb gwcloud/contactmanager
+
+#run with volume pending
+docker run -d -p 9280:8080 -e JAVA_OPTS="-Dgw.ab.serverid=#batch,workqueue,scheduler,messaging,startable,ui -Dgw.server.mode=dev -Dgw.ab.env=ootb -Dgw.passthrough.gw.loadsample.enable=true -Dgw.passthrough.gw.config.external.property.file=/tmp/external_gw.properties"  --name gw-ab-docker -v $PWD/external_gw.properties:/tmp
+
+
+##### for training purpouse
 docker build -t arribajim/tomcat9:gw-ab_v1 .
 
 linux

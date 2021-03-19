@@ -121,9 +121,8 @@ RUN set -eux; \
 	rm conf/context.xml; \
 	rm conf/server.xml
 
-
-# copying 
 COPY ["conf/context.xml","conf/server.xml","conf/external_gw.properties", "./conf/"]
-COPY ["webapps/pc.war", "./webapps/"]
+ADD https://github.com/arribajim/cloud_dev/releases/download/v0.1-alpha/pc.war ./webapps
+#COPY ["webapps/pc.war", "./webapps/"]
 EXPOSE 8080
 CMD ["catalina.sh", "run"]
