@@ -2,7 +2,7 @@ docker build -t gwcloud/policycenter:version10.00 .
 docker build -t gwcloud/policycenter:version10.M .
 
 #Run local-ootb without passing from external source the properties
-docker run -d -p 8180:8080 -e JAVA_OPTS="-Dgw.pc.serverid=#batch,workqueue,scheduler,messaging,startable,ui -Dgw.server.mode=dev -Dgw.passthrough.gw.config.external.property.file=/usr/local/tomcat/conf/external_gw.properties -Dgw.pc.env=ootb -Dgw.passthrough.gw.loadsample.enable=true" --name gwpcmuro gwcloud/policycenter:version10.M
+docker run -d -p 8180:8080 -e JAVA_OPTS="-Dgw.pc.serverid=#batch,workqueue,scheduler,messaging,startable,ui -Dgw.server.mode=dev -Dgw.passthrough.gw.config.external.property.file=/usr/local/tomcat/conf/external_gw.properties -Dgw.pc.env=ootb -Dgw.passthrough.gw.loadsample.enable=true" --name gw-pc-ootb gwcloud/policycenter:version10.M
 
 
 
