@@ -1,11 +1,11 @@
-docker build -t gwcloud/billingcenter:version10.03 .
+
 docker build -t gwcloud/billingcenter:version10.00 .
+
+#Run local pass volume and prop
+docker run -d -p 8580:8080 -e JAVA_OPTS="-Dgw.bc.serverid=#batch,workqueue,scheduler,messaging,startable,ui -Dgw.server.mode=dev -Dgw.passthrough.gw.config.external.property.file=/tmp/suite/bc/conf/external_gw.properties -Dgw.bc.env=ootb -Dgw.passthrough.gw.loadsample.enable=true" --restart unless-stopped -v c:\tmp:/tmp --name gw-bc-ootb gwcloud/billingcenter
 
 #Run local-ootb without passing from external source the properties
 docker run -d -p 8580:8080 -e JAVA_OPTS="-Dgw.bc.serverid=#batch,workqueue,scheduler,messaging,startable,ui -Dgw.server.mode=dev -Dgw.passthrough.gw.config.external.property.file=/usr/local/tomcat/conf/external_gw.properties -Dgw.bc.env=ootb -Dgw.passthrough.gw.loadsample.enable=true" --name gw-bc-ootb gwcloud/billingcenter
-
-
-
 
 Demo sample, with light container
 docker build -t arribajim/tomcat9:gw-bc_v1 .

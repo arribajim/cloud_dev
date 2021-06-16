@@ -2,6 +2,12 @@ Demo sample, with light container
 
 docker build -t gwcloud/contactmanager:version10.03 .
 
+# new tool for scan
+docker scan gwcloud/contactmanager:version10.03
+
+#Run local pass volume and prop
+docker run -d -p 8280:8080 -e JAVA_OPTS="-Dgw.ab.serverid=#batch,workqueue,scheduler,messaging,startable,ui -Dgw.server.mode=dev -Dgw.passthrough.gw.config.external.property.file=/tmp/suite/ab/conf/external_gw.properties -Dgw.ab.env=ootb -Dgw.passthrough.gw.loadsample.enable=true" -v c:\tmp:/tmp --restart unless-stopped --name gw-ab-ootb gwcloud/contactmanager
+
 
 #Run local-ootb without passing from external source the properties
 docker run -d -p 8280:8080 -e JAVA_OPTS="-Dgw.ab.serverid=#batch,workqueue,scheduler,messaging,startable,ui -Dgw.server.mode=dev -Dgw.passthrough.gw.config.external.property.file=/usr/local/tomcat/conf/external_gw.properties -Dgw.ab.env=ootb -Dgw.passthrough.gw.loadsample.enable=true" --name gw-ab-ootb gwcloud/contactmanager

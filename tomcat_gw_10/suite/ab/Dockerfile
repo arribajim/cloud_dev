@@ -128,7 +128,7 @@ RUN set -eux; \
 # copy conf, prop, war file
 COPY ["conf/context.xml","conf/server.xml","conf/external_gw.properties", "./conf/"]
 #todo move war to aws buket
-ADD https://github.com/arribajim/cloud_dev/releases/download/v0.1-alpha/ab.war ./webapps
-#COPY ["webapps/ab.war", "./webapps/"]
+# ADD https://github.com/arribajim/cloud_dev/releases/download/v0.1-alpha/ab.war ./webapps
+COPY ["webapps/ab.war", "./webapps/"]
 EXPOSE 8080
 CMD ["catalina.sh", "run"]

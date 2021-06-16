@@ -1,4 +1,11 @@
 Demo sample, with light container
+docker build -t gwcloud/claimcenter:version10.03 .
+docker image tag gwcloud/claimcenter:version10.03 gwcloud/claimcenter
+
+##volume
+docker run -d -p 8080:8080 -e TZ=America/Mexico_City -e JAVA_OPTS="-Dgw.cc.serverid=#batch,workqueue,scheduler,messaging,startable,ui -Dgw.server.mode=dev -Dgw.passthrough.gw.config.external.property.file=/tmp/suite/cc/conf/external_gw.properties -Dgw.cc.env=ootb -Dgw.passthrough.gw.loadsample.enable=true" -v c:\tmp:/tmp --restart unless-stopped --name gw-cc-ootb gwcloud/claimcenter
+
+
 docker build -t arribajim/tomcat9:gw-cc_v1 .
 linux
 -v $PWD/tmp/external_gw.properties:/usr/local/tomcat/config #´pegar properties
