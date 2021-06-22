@@ -1,5 +1,6 @@
 Demo sample, with light container
-docker build -t gwcloud/claimcenter:version10.03 .
+docker build -t gwcloud/claimcenter .
+:version10.03 .
 docker image tag gwcloud/claimcenter:version10.03 gwcloud/claimcenter
 
 ##volume
